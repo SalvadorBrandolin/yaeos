@@ -25,9 +25,9 @@ jobs:
       run: |
         ford ford.md
         cd python/docs
-        make html
+        sphinx-build -b html source build
         rm -r ../../doc/ford_site/page/python-api
-        mv build/html ../../doc/ford_site/page/python-api
+        mv build ../../doc/ford_site/page/python-api
         cd ../../
 
     - name: Upload Documentation
